@@ -4,13 +4,15 @@ class Header extends Component {
   render() {
 
     if(this.props.data){
-      var name = this.props.data.name;
-      var occupation= this.props.data.occupation;
-      var description= this.props.data.description;
-      var city= this.props.data.address.city;
-      var networks= this.props.data.social.map(function(network){
-        return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
-      })
+      var name = this.props.data3.name;
+      var surname = this.props.data3.surname;
+      var description= this.props.data3.bio;
+      if(this.props.data3.country != undefined){
+         var country= this.props.data3.country.countryname;
+      }
+      if(this.props.data[0] != undefined){
+      var experience= this.props.data[0].position;
+      }
     }
 
     return (
@@ -25,20 +27,37 @@ class Header extends Component {
             <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
             <li><a className="smoothscroll" href="#about">About</a></li>
 	         <li><a className="smoothscroll" href="#resume">Resume</a></li>
-            <li><a className="smoothscroll" href="#portfolio">Works</a></li>
-            <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a className="smoothscroll" href="#contact">Contact</a></li>
+            <li><a className="smoothscroll" href="#cv">Download my CV</a></li>
          </ul>
 
       </nav>
 
       <div className="row banner">
-         <div className="banner-text">
-            <h1 className="responsive-headline">I'm {name}.</h1>
-            <h3>I'm a {city} based <span>{occupation}</span>. {description}.</h3>
+         <div className="banner-text"> 
+         <h3><span>{description}.</span></h3>
+            <h1 className="responsive-headline">I'm {name} {surname}.</h1>
+            <h3><span>I'm a {country} based {experience}</span>.</h3>
             <hr />
             <ul className="social">
-               {networks}
+            <li>
+               <a href="https://github.com/firarasl?tab=repositories" target="_blank">
+                  <i className="fa fa-github" data-toggle="tooltip" data-placement="top" title="My Github">
+                     </i>
+                     </a>
+                     </li>
+                      <li>
+               <a href="https://www.linkedin.com/in/firangiz-rasulova-221a30194/" target="_blank">
+                  <i className="fa fa-linkedin" data-toggle="tooltip" data-placement="top" title="My Linkedin">
+                     </i>
+                     </a>
+                     </li>
+            <li>
+               <a href="https://gitlab.com/firangiz" target="_blank">
+                  <i className="fa fa-github" data-toggle="tooltip" data-placement="top" title="My GitLab">
+                     </i>
+                     </a>
+                     </li>
+           
             </ul>
          </div>
       </div>

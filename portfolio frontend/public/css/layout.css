@@ -32,8 +32,8 @@ header {
    position: relative;
    height: 800px;
    min-height: 500px;
-   width: 100%;
-   background: #161415 url(../images/header-background.jpg) no-repeat top center;
+   width: 100%; 
+   background: #161415 url(../images/prt.jpg)  center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -186,48 +186,52 @@ ul#nav li.current a { color: #F06000; }
 /* c. About Section
 /* ------------------------------------------------------------------ */
 
-#about {
-   background: #2B2B2B;
+#about, #cv {
+   background: #474747;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
 }
 
-#about a, #about a:visited  { color: #fff; }
-#about a:hover, #about a:focus { color: #11ABB0; }
+#about a, #about a:visited ,#cv a, #cv a:visited { color: #fff; }
+#about a:hover, #about a:focus , #cv a:hover, #cv a:focus{ color: #11ABB0; }
 
-#about h2 {
+#about h2, #cv h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
    color: #fff;
    margin-bottom: 12px;
 }
-#about p {
+#about p, #cv p {
    line-height: 30px;
-   color: #7A7A7A;
+   color: #9c9a9a;
 }
-#about .profile-pic {
+#about .profile-pic,#cv .profile-pic {
    position: relative;
    width: 120px;
    height: 120px;
    border-radius: 100%;
 }
-#about .contact-details { width: 41.66667%; }
-#about .download {
+#about .contact-details, #cv .contact-details { width: 41.66667%; }
+#about .download , #cv .download{
    width: 58.33333%;
    padding-top: 6px;
 }
-#about .main-col { padding-right: 5%; }
-#about .download .button {
+#about .main-col, #cv .main-col { padding-right: 5%; }
+#about .download .button ,#cv .download .button {
    margin-top: 6px;
    background: #444;
 }
-#about .download .button:hover {
+#about .download .button:hover ,#cv .download .button:hover{
    background: #fff;
    color: #2B2B2B;
 }
-#about .download .button i {
+#about .download .button i ,#cv .download .button i {
    margin-right: 15px;
    font-size: 20px;
+}
+
+#cv .centered-button{
+   text-align: center;
 }
 
 
@@ -236,7 +240,7 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #resume {
-   background: #fff;
+   background: #fff5f5;
    padding-top: 90px;
    padding-bottom: 72px;
    overflow: hidden;
@@ -933,6 +937,7 @@ call-to-action .button {
 footer {
    padding-top: 48px;
    margin-bottom: 48px;
+   background-color: wheat;
    color: #303030;
    font-size: 14px;
    text-align: center;
@@ -940,7 +945,9 @@ footer {
 }
 
 footer a, footer a:visited { color: #525252; }
-footer a:hover, footer a:focus { color: #fff; }
+footer a:hover, footer a:focus { color: black; }
+
+body{background-color: wheat;}
 
 /* copyright */
 footer .copyright {
