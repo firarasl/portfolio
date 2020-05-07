@@ -1,4 +1,8 @@
 package az.portfolio.portfolio.service;
 
-public class AuthorService {
+import az.portfolio.portfolio.domain.Author;
+
+public interface AuthorService {
+
+    Author getAuthorInformation();
 }

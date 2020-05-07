@@ -1,6 +1,7 @@
 package az.portfolio.portfolio.domain;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="author")
@@ -11,12 +12,23 @@ public class Author {
     private long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="country_id")
     private Country country;
 
     private String bio;
     private String surname;
     private String name;
     private String email;
+
+    private Timestamp birthdate;
+
+    public Timestamp getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Timestamp birthdate) {
+        this.birthdate = birthdate;
+    }
 
     public String getName() {
         return name;

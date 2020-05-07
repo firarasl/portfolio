@@ -2,23 +2,48 @@ package az.portfolio.portfolio.domain;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "education")
 public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Author author;
+
     private String type;
 
     @OneToOne
+    @JoinColumn(name = "faculty_id")
     private Faculty faculty;
+
     @OneToOne
+    @JoinColumn(name = "facility_id")
     private Facility facility;
 
+    private Timestamp startingDate;
+    private Timestamp endingDate;
+
+    public Timestamp getStartingDate() {
+        return startingDate;
+    }
+
+    public void setStartingDate(Timestamp startingDate) {
+        this.startingDate = startingDate;
+    }
+
+    public Timestamp getEndingDate() {
+        return endingDate;
+    }
+
+    public void setEndingDate(Timestamp endingDate) {
+        this.endingDate = endingDate;
+    }
 
     public long getId() {
         return id;

@@ -1,4 +1,10 @@
 package az.portfolio.portfolio.service;
 
-public class ExperienceService {
+import az.portfolio.portfolio.domain.Experience;
+
+import java.util.List;
+
+public interface ExperienceService {
+
+    List<Experience> getAuthorExperience();
 }

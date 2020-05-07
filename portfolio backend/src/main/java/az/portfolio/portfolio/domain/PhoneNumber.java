@@ -10,6 +10,7 @@ public class PhoneNumber {
     private long id;
     private String value;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
     private Author author;
 
     public long getId() {

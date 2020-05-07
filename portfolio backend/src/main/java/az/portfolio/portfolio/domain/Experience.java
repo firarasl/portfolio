@@ -2,6 +2,7 @@ package az.portfolio.portfolio.domain;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Experience {
@@ -10,9 +11,30 @@ public class Experience {
     protected long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
     private Author author;
+
     private String position;
     private String company;
+
+    private Timestamp startingDate;
+    private Timestamp endingDate;
+
+    public Timestamp getStartingDate() {
+        return startingDate;
+    }
+
+    public void setStartingDate(Timestamp startingDate) {
+        this.startingDate = startingDate;
+    }
+
+    public Timestamp getEndingDate() {
+        return endingDate;
+    }
+
+    public void setEndingDate(Timestamp endingDate) {
+        this.endingDate = endingDate;
+    }
 
     public long getId() {
         return id;
